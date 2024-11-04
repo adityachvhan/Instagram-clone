@@ -1,47 +1,28 @@
 import React from 'react';
 
 import {
-    DialogActionTrigger,
-    DialogBody,
-    DialogCloseTrigger,
-    DialogContent,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-    DialogRoot, // Add this line
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalHeader,
+    ModalOverlay,
 } from "@chakra-ui/react";
 
-import { Button } from '@mui/material';
-
-const CommentModel = () => {
+const CommentModel = ({onClose,isOpen}) => {
     return (
         <div>
-            <DialogRoot>
-                <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
-                        Open Dialog
-                    </Button>
-                </DialogTrigger>
-                <DialogContent>
-                    <DialogHeader>
-                        <DialogTitle>Dialog Title</DialogTitle>
-                    </DialogHeader>
-                    <DialogBody>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </DialogBody>
-                    <DialogFooter>
-                        <DialogActionTrigger asChild>
-                            <Button variant="outline">Cancel</Button>
-                        </DialogActionTrigger>
-                        <Button>Save</Button>
-                    </DialogFooter>
-                    <DialogCloseTrigger />
-                </DialogContent>
-            </DialogRoot>
+            <Modal onClose={onClose} isOpen={true} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                
+                    </ModalBody>
+                
+                </ModalContent>
+            </Modal>
         </div>
     );
 }
