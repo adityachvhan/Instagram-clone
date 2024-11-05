@@ -27,8 +27,6 @@ public class PostServiceImplementation implements PostService {
 	@Autowired
 	private UserRepository userRepo;
 	
-
-
 	
 	
 	@Override
